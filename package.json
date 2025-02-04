@@ -28,6 +28,7 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
+		"postinstall": "husky",
 		"build": "yarn build:clean && yarn tsc -p tsconfig.build.json",
 		"build:clean": "rimraf dist",
 		"test": "vitest --run",
@@ -35,10 +36,14 @@
 	},
 	"packageManager": "yarn@4.6.0",
 	"devDependencies": {
+		"@commitlint/cli": "^19.7.1",
+		"@commitlint/config-conventional": "^19.7.1",
 		"@types/react": "^19.0.8",
 		"@types/react-dom": "^19.0.3",
 		"@vitest/coverage-v8": "^3.0.5",
+		"husky": "^9.1.7",
 		"jsdom": "^26.0.0",
+		"lint-staged": "^15.4.3",
 		"pinst": "^3.0.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
