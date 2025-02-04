@@ -13,6 +13,12 @@
 		"type": "git",
 		"url": "https://github.com/ver0-project/react-hooks-testing"
 	},
+	"bugs": {
+		"url": "https://github.com/ver0-project/react-hooks-testing/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"license": "MIT",
 	"author": "Anton Zinovyev <xog3@yandex.ru>",
 	"type": "module",
