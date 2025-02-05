@@ -6,7 +6,7 @@
 <img alt="Dependents (via libraries.io), scoped npm package" src="https://img.shields.io/librariesio/dependents/npm/%40ver0/react-hooks-testing?style=flat-square">
 <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/ver0-project/react-hooks-testing/ci.yml?style=flat-square">
 <img alt="Codecov" src="https://img.shields.io/codecov/c/github/ver0-project/react-hooks-testing?token=Y2K96S71RH&style=flat-square">
-<img alt="NPM Type Definitions" src="https://img.shields.io/npm/types/%40react-hookz%2Fdeep-equal?style=flat-square">
+<img alt="NPM Type Definitions" src="https://img.shields.io/npm/types/%40ver0%2Freact-hooks-testing?style=flat-square">
 
 <p><br/>🧪 Test your React hooks with ease!</p>
 </div>
