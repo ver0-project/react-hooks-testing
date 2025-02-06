@@ -9,6 +9,7 @@ export async function hooksCleanup() {
 	for (const cb of cbs) {
 		cbs.delete(cb);
 
+		// eslint-disable-next-line no-await-in-loop
 		await cb();
 	}
 }
@@ -18,8 +19,6 @@ export async function hooksCleanup() {
  */
 export function cleanupAdd(cb: CleanupCallback) {
 	cbs.add(cb);
-
-	return () => cleanupRemove(cb);
 }
 
 /**

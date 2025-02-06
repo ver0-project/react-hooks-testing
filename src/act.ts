@@ -1,12 +1,13 @@
-import {act as reAct} from "react";
+import {act as reAct} from 'react';
 
-type reactGlobal = typeof globalThis & { IS_REACT_ACT_ENVIRONMENT?: boolean }
+type reactGlobal = typeof globalThis & {IS_REACT_ACT_ENVIRONMENT?: boolean};
 
-
-/* v8 ignore next 7 */
+/* v8 ignore next 9 */
 function getGlobalThis(): reactGlobal {
 	if (typeof globalThis !== 'undefined') return globalThis;
+	// eslint-disable-next-line unicorn/prefer-global-this
 	if (typeof self !== 'undefined') return self;
+	// eslint-disable-next-line unicorn/prefer-global-this
 	if (typeof window !== 'undefined') return window;
 
 	throw new Error('Unable to locate global object');
@@ -20,7 +21,7 @@ function setIsReactEnvironment() {
 
 	return () => {
 		g.IS_REACT_ACT_ENVIRONMENT = initial;
-	}
+	};
 }
 
 /**

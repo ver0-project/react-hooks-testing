@@ -1,47 +1,50 @@
-import {Component, createElement, JSXElementConstructor, PropsWithChildren, ReactNode} from "react";
-import {RendererProps} from "./create-hook-renderer.js";
+import type {JSXElementConstructor, PropsWithChildren, ReactNode} from 'react';
+import {Component, createElement} from 'react';
+import type {RendererProps} from './create-hook-renderer.js';
 
 // minimal ErrorBoundary implementation
 
 type ErrorBoundaryProps = PropsWithChildren<{
-	onError: (error: Error, resetError: () => void) => void;
+	readonly onError: (error: Error, resetError: () => void) => void;
 }>;
 
 type ErrorBoundaryState = {
 	hasError: boolean;
-}
+};
 
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+	static getDerivedStateFromError() {
+		return {hasError: true};
+	}
+
 	state = {hasError: false};
 
-	static getDerivedStateFromError() {
-		return {hasError: true}
-	}
-
 	resetError = () => {
-		this.setState({hasError: false})
-	}
+		this.setState({hasError: false});
+	};
 
 	componentDidCatch(error: Error) {
 		this.props.onError(error, this.resetError);
 	}
 
+	// ReactNode types now contain `Promise<>` in return type, therefore
+	// linter thinks that we have to make render function async
+	// eslint-disable-next-line @typescript-eslint/promise-function-async
 	render() {
 		if (this.state.hasError) {
-			return null
+			return null;
 		}
 
 		return this.props.children;
 	}
 }
 
-
 export function createHookTestHarness<Props, Result>(
 	{callback, setValue, setError}: RendererProps<Props, Result>,
-	wrapper?: JSXElementConstructor<{ children: ReactNode }>
+	wrapper?: JSXElementConstructor<{children: ReactNode}>
 ) {
-	function TestComponent({hookProps}: { hookProps: Props }) {
-		setValue(callback(hookProps))
+	function TestComponent({hookProps}: {readonly hookProps: Props}) {
+		setValue(callback(hookProps));
 		return null;
 	}
 
@@ -53,18 +56,16 @@ export function createHookTestHarness<Props, Result>(
 		};
 
 		setError(error);
-	}
+	};
 
 	return (props: Props) => {
 		resetError?.();
 
-		let children = <TestComponent hookProps={props}/>;
+		let children = <TestComponent hookProps={props} />;
 		if (wrapper) {
 			children = createElement(wrapper, null, children);
 		}
 
-		return (
-			<ErrorBoundary onError={handleError}>{children}</ErrorBoundary>
-		)
+		return <ErrorBoundary onError={handleError}>{children}</ErrorBoundary>;
 	};
 }
