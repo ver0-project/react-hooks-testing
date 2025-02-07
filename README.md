@@ -1,12 +1,12 @@
 <div align="center">
 <h1>@ver0/react-hooks-testing</h1>
 
-<img alt="NPM Version" src="https://img.shields.io/npm/v/%40ver0%2Freact-hooks-testing?style=flat-square">
-<img alt="NPM Downloads" src="https://img.shields.io/npm/dm/%40ver0%2Freact-hooks-testing?style=flat-square">
-<img alt="Dependents (via libraries.io), scoped npm package" src="https://img.shields.io/librariesio/dependents/npm/%40ver0/react-hooks-testing?style=flat-square">
-<img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/ver0-project/react-hooks-testing/ci.yml?style=flat-square">
-<img alt="Codecov" src="https://img.shields.io/codecov/c/github/ver0-project/react-hooks-testing?token=Y2K96S71RH&style=flat-square">
-<img alt="NPM Type Definitions" src="https://img.shields.io/npm/types/%40ver0%2Freact-hooks-testing?style=flat-square">
+[![NPM Version](https://img.shields.io/npm/v/%40ver0%2Freact-hooks-testing?style=flat-square)](https://www.npmjs.com/package/@ver0/react-hooks-testing)
+[![NPM Downloads](https://img.shields.io/npm/dm/%40ver0%2Freact-hooks-testing?style=flat-square)](https://www.npmjs.com/package/@ver0/react-hooks-testing)
+[![Dependents (via libraries.io), scoped npm package](https://img.shields.io/librariesio/dependents/npm/%40ver0/react-hooks-testing?style=flat-square)](https://www.npmjs.com/package/@ver0/react-hooks-testing)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ver0-project/react-hooks-testing/ci.yml?style=flat-square)](https://github.com/ver0-project/react-hooks-testing/actions)
+[![Codecov](https://img.shields.io/codecov/c/github/ver0-project/react-hooks-testing?token=Y2K96S71RH&style=flat-square)](https://app.codecov.io/gh/ver0-project/react-hooks-testing)
+[![NPM Type Definitions](https://img.shields.io/npm/types/%40ver0%2Freact-hooks-testing?style=flat-square)](https://www.npmjs.com/package/@ver0/react-hooks-testing)
 
 <p><br/>🧪 Test your React hooks with ease!</p>
 </div>
