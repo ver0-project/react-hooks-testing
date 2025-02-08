@@ -1173,15 +1173,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-hookz/eslint-formatter-gha@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "@react-hookz/eslint-formatter-gha@npm:3.0.3"
-  dependencies:
-    "@actions/core": "npm:^1.11.1"
-  checksum: 10c0/6765a9fdc6e779b1809d97385bccaef8e0395e2ccf39479e39685e667db0e72ad11e4951bf4ff1f649fc8503404c80dbdf555c5475e59fd3a231ebbd9cbb0150
-  languageName: node
-  linkType: hard
-
 "@rollup/rollup-android-arm-eabi@npm:4.34.1":
   version: 4.34.1
   resolution: "@rollup/rollup-android-arm-eabi@npm:4.34.1"
@@ -1779,16 +1770,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ver0/eslint-formatter-gha@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@ver0/eslint-formatter-gha@npm:1.0.1"
+  dependencies:
+    "@actions/core": "npm:^1.11.1"
+  checksum: 10c0/735752bb1cf917b5d1301fe03a03a32b0c092787d1e42762cda7919c450900108ef973bacb7cf7d262ea995e518120822bb6109064e8cf1e4c2abf2a66c291bf
+  languageName: node
+  linkType: hard
+
 "@ver0/react-hooks-testing@workspace:.":
   version: 0.0.0-use.local
   resolution: "@ver0/react-hooks-testing@workspace:."
   dependencies:
     "@commitlint/cli": "npm:^19.7.1"
     "@commitlint/config-conventional": "npm:^19.7.1"
-    "@react-hookz/eslint-formatter-gha": "npm:^3.0.3"
     "@types/react": "npm:^19.0.8"
     "@types/react-dom": "npm:^19.0.3"
     "@ver0/eslint-config": "npm:^1.1.1"
+    "@ver0/eslint-formatter-gha": "npm:^1.0.1"
     "@vitest/coverage-v8": "npm:^3.0.5"
     eslint: "npm:^9.19.0"
     husky: "npm:^9.1.7"
