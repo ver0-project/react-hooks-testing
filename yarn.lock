@@ -1756,9 +1756,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ver0/eslint-config@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@ver0/eslint-config@npm:1.1.1"
+"@ver0/eslint-config@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@ver0/eslint-config@npm:1.1.2"
   dependencies:
     "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.4.1"
     "@eslint/js": "npm:^9.19.0"
@@ -1782,7 +1782,7 @@ __metadata:
     prettier: "npm:^3.4.2"
     typescript: "npm:^5.7.3"
     typescript-eslint: "npm:^8.23.0"
-  checksum: 10c0/335991acad3f2d7b99b526a6a116f5f946b87b8e64e42af2e53a1174ccd843e265a8d2f8dfe9516c682737f372de42f27d191b77b369865ebddeff7e33357e69
+  checksum: 10c0/c6552bfe34bb6479f48e9bfe04824f538fd6da2ca1c47dcb0c64c6b5ce8eab96d48f03dd856cf90dbe653b331385c60a481a93d04e3bec50929eead6d1711842
   languageName: node
   linkType: hard
 
@@ -1803,7 +1803,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:^19.7.1"
     "@types/react": "npm:^19.0.8"
     "@types/react-dom": "npm:^19.0.3"
-    "@ver0/eslint-config": "npm:^1.1.1"
+    "@ver0/eslint-config": "npm:^1.1.2"
     "@ver0/eslint-formatter-gha": "npm:^1.0.1"
     "@vitest/coverage-v8": "npm:^3.0.5"
     eslint: "npm:^9.20.0"
