@@ -41,7 +41,7 @@
 	},
 	"packageManager": "yarn@4.6.0",
 	"devDependencies": {
-		"@commitlint/cli": "^19.7.1",
+		"@commitlint/cli": "^19.8.0",
 		"@commitlint/config-conventional": "^19.8.0",
 		"@types/react": "^19.0.10",
 		"@types/react-dom": "^19.0.4",
