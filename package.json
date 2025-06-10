@@ -43,7 +43,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
-		"@types/react": "^19.1.6",
+		"@types/react": "^19.1.7",
 		"@types/react-dom": "^19.1.6",
 		"@ver0/eslint-config": "^1.1.4",
 		"@ver0/eslint-formatter-gha": "^1.0.1",
