@@ -53,7 +53,7 @@
 		"jsdom": "^26.1.0",
 		"lint-staged": "^16.1.2",
 		"pinst": "^3.0.0",
-		"react": "^19.1.0",
+		"react": "^19.1.1",
 		"react-dom": "^19.1.0",
 		"rimraf": "^6.0.1",
 		"semantic-release": "^24.2.7",
@@ -61,7 +61,7 @@
 		"vitest": "^3.2.4"
 	},
 	"peerDependencies": {
-		"react": "^19.1.0",
+		"react": "^19.1.1",
 		"react-dom": "^19.1.0"
 	},
 	"peerDependenciesMeta": {
