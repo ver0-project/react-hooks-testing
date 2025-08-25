@@ -43,7 +43,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
-		"@types/react": "^19.1.8",
+		"@types/react": "^19.1.9",
 		"@types/react-dom": "^19.1.6",
 		"@ver0/eslint-config": "^1.1.4",
 		"@ver0/eslint-formatter-gha": "^1.0.1",
@@ -53,7 +53,7 @@
 		"jsdom": "^26.1.0",
 		"lint-staged": "^16.1.5",
 		"pinst": "^3.0.0",
-		"react": "^19.1.0",
+		"react": "^19.1.1",
 		"react-dom": "^19.1.0",
 		"rimraf": "^6.0.1",
 		"semantic-release": "^24.2.7",
@@ -61,7 +61,7 @@
 		"vitest": "^3.2.4"
 	},
 	"peerDependencies": {
-		"react": "^19.1.0",
+		"react": "^19.1.1",
 		"react-dom": "^19.1.0"
 	},
 	"peerDependenciesMeta": {
