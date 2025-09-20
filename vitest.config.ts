@@ -5,7 +5,7 @@ export default defineConfig({
 		dir: './src',
 		setupFiles: ['./src/tests/setup/react-hooks.test.ts'],
 		passWithNoTests: true,
-		workspace: [
+		projects: [
 			{
 				extends: true,
 				test: {
