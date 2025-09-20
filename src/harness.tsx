@@ -41,7 +41,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
 export function createHookTestHarness<Props, Result>(
 	{callback, setValue, setError}: RendererProps<Props, Result>,
-	wrapper?: JSXElementConstructor<{children: ReactNode}>
+	wrapper?: JSXElementConstructor<{children: ReactNode}>,
 ) {
 	function TestComponent({hookProps}: {readonly hookProps: Props}) {
 		setValue(callback(hookProps));

@@ -8,7 +8,7 @@ import {createHookTestHarness} from './harness.js';
 
 function createServerRenderer<Props, Result>(
 	rendererProps: RendererProps<Props, Result>,
-	options?: RendererOptions<NoInfer<Props>>
+	options?: RendererOptions<NoInfer<Props>>,
 ) {
 	let renderProps: Props | undefined;
 	let container: Element | undefined;
@@ -22,6 +22,7 @@ function createServerRenderer<Props, Result>(
 			try {
 				output = renderToString(harness(props));
 			} catch (error: unknown) {
+				// eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
 				rendererProps.setError(error as Error);
 			}
 		},

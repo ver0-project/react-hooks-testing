@@ -25,7 +25,7 @@ export type ResultValues<T> = ResultValue<T> & {
 function newResults<T>() {
 	const results: Array<ResultValue<T>> = [];
 
-	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions,@typescript-eslint/no-unsafe-type-assertion
 	const result = {
 		get all() {
 			return [...results];
@@ -80,7 +80,7 @@ export type RendererProps<Props, Result> = {
 // Describes the renderer creator function that creates a renderer for a specific hook.
 export type RendererCreator<Props, Result, TRenderer extends Renderer<Props>> = (
 	props: RendererProps<Props, Result>,
-	options?: RendererOptions<NoInfer<Props>>
+	options?: RendererOptions<NoInfer<Props>>,
 ) => TRenderer;
 export type RendererOptions<Props> = {
 	initialProps?: Props;
@@ -88,7 +88,7 @@ export type RendererOptions<Props> = {
 } & Pick<RootOptions, 'onCaughtError' | 'onRecoverableError'>;
 
 export function createHookRenderer<Props, Result, TRenderer extends Renderer<Props>>(
-	createRenderer: RendererCreator<Props, Result, TRenderer>
+	createRenderer: RendererCreator<Props, Result, TRenderer>,
 ) {
 	return async (callback: (props: Props) => Result, options?: RendererOptions<Props>) => {
 		const {result, setValue, setError} = newResults<Result>();
@@ -102,7 +102,7 @@ export function createHookRenderer<Props, Result, TRenderer extends Renderer<Pro
 				setValue,
 				setError,
 			},
-			options
+			options,
 		);
 
 		await render(hookProps);

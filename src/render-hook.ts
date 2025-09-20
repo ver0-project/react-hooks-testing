@@ -7,7 +7,7 @@ import {createHookTestHarness} from './harness.js';
 
 function createDOMRenderer<Props, Result>(
 	rendererProps: RendererProps<Props, Result>,
-	options?: RendererOptions<NoInfer<Props>>
+	options?: RendererOptions<NoInfer<Props>>,
 ) {
 	let root: Root | undefined;
 	const harness = createHookTestHarness(rendererProps, options?.wrapper);

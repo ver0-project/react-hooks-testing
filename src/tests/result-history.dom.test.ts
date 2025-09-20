@@ -6,6 +6,7 @@ describe('result history DOM', () => {
 		if (value === 2) {
 			throw new Error('expected');
 		}
+
 		return value;
 	}
 
@@ -43,6 +44,7 @@ describe('result history SSR hydrated', () => {
 		if (value === 2) {
 			throw new Error('expected');
 		}
+
 		return value;
 	}
 

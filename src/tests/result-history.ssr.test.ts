@@ -6,6 +6,7 @@ describe('result history SSR', () => {
 		if (value === 2) {
 			throw new Error('expected');
 		}
+
 		return value;
 	}
 

@@ -28,7 +28,7 @@ describe('hydration errors tests', () => {
 		const {rerender} = await renderHookServer(() => useCounter());
 
 		await expect(async () => rerender()).rejects.toThrow(
-			new Error('You must hydrate the component before you can rerender')
+			new Error('You must hydrate the component before you can rerender'),
 		);
 	});
 });

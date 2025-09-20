@@ -1,22 +1,15 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "strict": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "skipLibCheck": true,
-    "jsx": "react-jsx"
-  },
-  "exclude": [
-    "node_modules",
-    "dist",
-		"coverage",
-    ".yarn",
-    ".pnp.cjs",
-    ".pnp.loader.mjs"
-  ]
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"strict": true,
+		"strictNullChecks": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"skipLibCheck": true,
+		"jsx": "react-jsx"
+	},
+	"exclude": ["node_modules", "dist", "coverage", ".yarn", ".pnp.cjs", ".pnp.loader.mjs"]
 }
