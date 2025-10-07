@@ -58,7 +58,7 @@ function newResults<T>() {
 			results.push(Object.freeze({value, error: undefined}));
 		},
 		setError(error: Error) {
-			results.push(Object.freeze({value: undefined, error}));
+			results.push(Object.freeze({error, value: undefined}));
 		},
 	};
 }

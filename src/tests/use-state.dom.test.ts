@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {describe, expect, it} from 'vitest';
 import {act, renderHook, renderHookServer} from '../index.js';
+import {expectResultValue} from './test-helpers.test.js';
 
 describe('useState on the client', () => {
 	it('should use setState value', async () => {
@@ -10,14 +11,7 @@ describe('useState on the client', () => {
 			return {state, setState};
 		});
 
-		expect(result.value).not.toBe(undefined);
-		expect(result.error).toBe(undefined);
-
-		if (result.value === undefined) {
-			return;
-		}
-
-		expect(result.value.state).toBe('foo');
+		expect(expectResultValue(result).state).toBe('foo');
 	});
 
 	it('should update state', async () => {
@@ -27,18 +21,11 @@ describe('useState on the client', () => {
 			return {state, setState};
 		});
 
-		expect(result.value).not.toBe(undefined);
-		expect(result.error).toBe(undefined);
-
-		if (result.value === undefined) {
-			return;
-		}
-
 		await act(async () => {
-			result.value.setState('bar');
+			expectResultValue(result).setState('bar');
 		});
 
-		expect(result.value.state).toBe('bar');
+		expect(expectResultValue(result).state).toBe('bar');
 	});
 });
 
@@ -50,15 +37,8 @@ describe('useState SSR hydrated', () => {
 			return {state, setState};
 		});
 
-		expect(result.value).not.toBe(undefined);
-		expect(result.error).toBe(undefined);
-
-		if (result.value === undefined) {
-			return;
-		}
-
 		await act(async () => {
-			result.value.setState('bar');
+			expectResultValue(result).setState('bar');
 		});
 
 		expect(result.all.length).toBe(1);
@@ -66,9 +46,9 @@ describe('useState SSR hydrated', () => {
 		await hydrate();
 
 		await act(async () => {
-			result.value.setState('bar');
+			expectResultValue(result).setState('bar');
 		});
 
-		expect(result.value.state).toBe('bar');
+		expect(expectResultValue(result).state).toBe('bar');
 	});
 });

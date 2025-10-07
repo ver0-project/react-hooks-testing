@@ -94,24 +94,22 @@ regarding the testing environment configuration. Since you're using this library
 testing environment, making this error redundant.
 
 ```ts filename="useState.test.ts"
-import {expect, test} from 'vitest';
 import {act, renderHook} from '@ver0/react-hooks-testing';
+import {useState} from 'react';
+import {expect, test} from 'vitest';
+import {expectResultValue} from './test-helpers.test.js';
 
 test('should use setState value', async () => {
 	const {result} = await renderHook(() => useState('foo'));
 
-	expect(result.value).toBe('foo');
-	expect(result.error).toBe(undefined);
-
-	if (result.value === undefined) {
-		return;
-	}
+	const value = expectResultValue(result);
+	expect(value[0]).toBe('foo');
 
 	await act(async () => {
-		result.value[1]('bar');
+		value[1]('bar');
 	});
 
-	expect(result.value[0]).toBe('bar');
+	expect(expectResultValue(result)[0]).toBe('bar');
 });
 ```
 
@@ -150,12 +148,43 @@ each render.
 Another notable difference is the `error` property. This property captures any error thrown during the hook’s rendering,
 thanks to an Error Boundary component wrapped around the hook’s harness component.
 
-Each result object is immutable and contains either a `value` or an `error` property—but never both. The hook’s result
-object follows the same principle. Although the `value` and `error` properties are implemented as getters and always
-exist, the values they return correspond to the most recent render result from the `all` array.
+Each result object is immutable and has either a `value` or an `error` property set. The hook's result object follows
+the same principle. Although the `value` and `error` properties are implemented as getters and always exist, the values
+they return correspond to the most recent render result from the `all` array.
+
+> Though it is possible for both values to become `undefined` simultaneously, when a hook returns `undefined` as a valid
+> value, it is developer's responsibility to check error prior to using the value. The other theoretical possibility is
+> `undefined` being thrown, but that is considered a bad practice and thus not handled specifically.
 
 Otherwise, the API is similar to `@testing-library/react`. Note that the `waitForNextUpdate` function is not provided,
 as modern testing frameworks include their own `waitFor` function, which serves the same purpose.
+
+**Type-Safety Helper**
+
+While the discriminated union type provides strong type safety, manually checking for errors in every test can be
+annoyingly verbose. To ease usage while ensuring both type-safety and test coverage, you can introduce a helper
+function:
+
+```ts filename="test-helpers.test.ts"
+import type {ResultValue} from '@ver0/react-hooks-testing';
+import {expect} from 'vitest';
+
+/**
+ * Helper to assert that a hook result is successful and extract its value in a type-safe way.
+ */
+export function expectResultValue<T>(result: ResultValue<T>) {
+	expect(result.error).toBeUndefined();
+
+	if (result.error) {
+		throw new Error('result has unexpected error');
+	}
+
+	return result.value;
+}
+```
+
+This helper both asserts that no error occurred and narrows the TypeScript type, allowing you to work with
+`result.value` directly, as demonstrated in the example above.
 
 #### Testing server-side hooks
 
